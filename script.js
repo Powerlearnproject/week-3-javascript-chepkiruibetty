@@ -65,3 +65,26 @@ function toggleVisibility() {
 // Add event listeners
 document.getElementById('greetButton').addEventListener('click', greetUser);
 document.getElementById('toggleButton').addEventListener('click', toggleVisibility);
+
+// Chart.js code to create a sample chart
+var ctx = document.getElementById('expenseChart').getContext('2d');
+var expenseChart = new Chart(ctx, {
+    type: 'line', // Change to 'bar', 'pie', etc. for different types of charts
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        datasets: [{
+            label: 'Expenses',
+            data: [65, 59, 80, 81, 56, 55],
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
