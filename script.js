@@ -37,3 +37,31 @@ console.log("Subtraction (10 - 6): " + subtract(10, 6));
 console.log("Division (8 / 2): " + divide(8, 2));
 console.log("Division (8 / 0): " + divide(8, 0)); // Test division by zero
 console.log("Multiplication (4 * 7): " + multiply(4, 7));
+// JavaScript code for DOM manipulation and event handling
+
+// Function to greet the user based on input
+function greetUser() {
+    var nameInput = document.getElementById('nameInput').value;
+    var greetingElement = document.getElementById('greeting');
+    if (nameInput) {
+        greetingElement.textContent = 'Hello, ' + nameInput + '!';
+        greetingElement.style.color = 'green';
+    } else {
+        greetingElement.textContent = 'Please enter your name.';
+        greetingElement.style.color = 'red';
+    }
+}
+
+// Function to toggle the visibility of an element
+function toggleVisibility() {
+    var toggleTextElement = document.getElementById('toggleText');
+    if (toggleTextElement.classList.contains('hidden')) {
+        toggleTextElement.classList.remove('hidden');
+    } else {
+        toggleTextElement.classList.add('hidden');
+    }
+}
+
+// Add event listeners
+document.getElementById('greetButton').addEventListener('click', greetUser);
+document.getElementById('toggleButton').addEventListener('click', toggleVisibility);
